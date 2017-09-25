@@ -20,7 +20,7 @@ const int cross=2;
 const int border=3;
 const int empty=0;
 */
-enum {noughts,cross,border,empty};
+enum {noughts,cross,border,empty};     
 enum {humanwin,compwin,draw};
 const int directions[4]={1,5,4,6};
 
@@ -31,8 +31,12 @@ const int convert_to_25[9]=
 	16,17,18
 };
 
-const int inmiddle= 4;
-const int incorner[4]={0,2,6,8};
+const int inmiddle= 4;          //middle of the board with zero indexing
+const int incorner[4]={0,2,6,8};           //middle of the board with zero indexing
+int play= 0;   //how many moves are used
+int positions =0;  //how many position comp searches
+int maxplay= 0; //how many moves remains or how many can we go
+
 
 void initialize(void);
 void print_board(void);
@@ -45,3 +49,6 @@ int find_three_in_a_row(const int ourindex,const int us);
 int get_num_for_dir(int dir,int start_sq,const int us);
 int get_winning_move(const int side);
 int get_best_move(void);
+int find_three_in_a_row_allboard(const int us);
+int eval_for_win(const int us);
+int min_max(int side);

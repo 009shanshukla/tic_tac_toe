@@ -1,6 +1,6 @@
 int get_computer_move(const int side)
 {
-	int numfree=0;        //calculate total free moves
+	/*int numfree=0;        //calculate total free moves
 	int available_move[9];   //store every free move
 	int randmove=0;
 	randmove=get_winning_move(side);  //selecting winning move
@@ -24,17 +24,25 @@ int get_computer_move(const int side)
 		}
 	}
 	randmove=rand()%numfree;                 // picking one of free move
-	return available_move[randmove];	
+	return available_move[randmove];*/
+
+	play=0;
+	positions=0;
+	maxplay=0;
+	int best=min_max(side);
+	printf("pos %d maxDepth %d bestmove %d\n",positions,maxplay,best);
+	return best;
+	
 }
 
 
-int get_winning_move(const int side)
+int get_winning_move(const int side)      // for itself or for human, computer is checking if it has a final winning move
 {
 	int winmove=0;
 	int ourmove=-1;
 	for(int i=0;i<9;i++)
 	{
-		if(board[convert_to_25[i]]==empty)
+		if(board[convert_to_25[i]]==empty)       
 		{
 			ourmove=convert_to_25[i];
 			board[ourmove]=side;
@@ -48,10 +56,12 @@ int get_winning_move(const int side)
 		}
 	}
 	return ourmove;
+
+	
 	
 }
 
-int get_best_move()
+int get_best_move()      // if computer does not find a winning move or to counter from human move, it is going to check for best move in either middle or corner
 {
     int ourmove= convert_to_25[inmiddle];
     if(board[ourmove]==empty)
