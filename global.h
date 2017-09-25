@@ -30,6 +30,10 @@ const int convert_to_25[9]=
 	11,12,13,
 	16,17,18
 };
+
+const int inmiddle= 4;
+const int incorner[4]={0,2,6,8};
+
 void initialize(void);
 void print_board(void);
 void run_game(void);
@@ -40,4 +44,4 @@ int get_computer_move(const int side);
 int find_three_in_a_row(const int ourindex,const int us);
 int get_num_for_dir(int dir,int start_sq,const int us);
 int get_winning_move(const int side);
-
+int get_best_move(void);

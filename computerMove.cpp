@@ -6,6 +6,15 @@ int get_computer_move(const int side)
 	randmove=get_winning_move(side);  //selecting winning move
 	if(randmove!= -1)
 		return randmove;
+
+	randmove=get_winning_move(side ^ 1);  //selecting winning move
+	if(randmove!= -1)
+		return randmove;
+
+	randmove=get_best_move();  //selecting winning move
+	if(randmove!= -1)
+		return randmove;
+
 	randmove=0;							           
 	for(int i=0;i<9;i++)
 	{
@@ -40,4 +49,23 @@ int get_winning_move(const int side)
 	}
 	return ourmove;
 	
+}
+
+int get_best_move()
+{
+    int ourmove= convert_to_25[inmiddle];
+    if(board[ourmove]==empty)
+    	return ourmove;
+	
+	ourmove=-1;
+	
+	for(int i=0;i<4;i++)
+	{
+		ourmove= convert_to_25[incorner[i]];
+		if(board[ourmove]==empty)
+			break;
+		ourmove =-1;
+	}
+    return ourmove;
+
 }
