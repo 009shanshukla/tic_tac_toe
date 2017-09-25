@@ -64,7 +64,7 @@ void run_game()
 		else
 		{
 	//	take input from computer and move the side
-			last_move_made=get_computer_move();
+			last_move_made=get_computer_move(side);
 			make_move(side,last_move_made);
 			side=noughts;
 			print_board();
