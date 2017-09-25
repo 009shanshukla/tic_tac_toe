@@ -36,7 +36,8 @@ void run_game(void);
 void make_move(const int side,const int sq);
 int has_empty(void);
 int get_human_move(void);
-int get_computer_move(void);
+int get_computer_move(const int side);
 int find_three_in_a_row(const int ourindex,const int us);
 int get_num_for_dir(int dir,int start_sq,const int us);
+int get_winning_move(const int side);
 
