@@ -1,8 +1,23 @@
 # tic_tac_toe
-Self Project on Artificial Intelligence
 
-TIC_TAC_TOE is a game written in C/C++, built an environment for AI computer player, playable from console where two players(human + computer) can play at a time, every move that is played by human is shown in O character and X for computer move. ASCII char is used for boundaries.It implements algorithm MIN_MAX for making computer player powerful.
+### Overview
 
-Technologies Used- C++, AI algorithm(MIN_MAX) 
+- Game is written in C++.
+
+- Built in an environment for AI, playable from console.
+
+- User will play with computer which will play optimally.
+
+- ASCII characters are used for GUI
+
+### Specifications
+
+- ***MIN-MAX*** Algorithm is used to make computer move optimally.
+
+### Game Screen
+
+![](https://github.com/009shanshukla/tic_tac_toe/blob/master/game.png)
+
+ 
 
 
